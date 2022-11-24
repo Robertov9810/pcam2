@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('siglas');
-            $table->integer('voltaje');
+            $table->String('voltaje');
             $table->string('enlace');
             $table->BigInteger('zona_id')->unsigned();
             $table->foreign('zona_id')->references('id')->on('zonas')->onDelete('cascade');

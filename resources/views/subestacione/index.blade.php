@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href= "https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" >
+@endsection
+
 @section('template_title')
     Subestacione
 @endsection
@@ -104,18 +108,16 @@
                                     @foreach ($subestaciones as $subestacione)
                                         <tr>
                                             <td><center>{{ ++$i }}</td>
-                                            
 											<td>{{ $subestacione->nombre }}</td>
 											<td><center>{{ $subestacione->siglas }}</center></td>
                                             <td><center>{{$subestacione->voltaje}}</center></td>
 											<td><center>{{ $subestacione->enlace }}</center></td>
 											<td><center>{{ $subestacione->zona->nombre }}</center></td>
 											<td><center>{{ $subestacione->gerencia->acronimo }}</center></td>
-
                                             <td>
                                                 <form action="{{ route('subestaciones.destroy',$subestacione->id) }}" method="POST">
-                                                <center><a class="btn btn-sm btn-primary " href="{{ route('subestaciones.show',$subestacione->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('subestaciones.edit',$subestacione->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <!--<center><a class="btn btn-sm btn-primary " href="{ { route('subestaciones.show',$subestacione->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>-->
+                                                    <center><a class="btn btn-sm btn-success" href="{{ route('subestaciones.edit',$subestacione->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button></center>
@@ -128,8 +130,34 @@
                         </div>
                     </div>
                 </div>
-                {!! $subestaciones->links() !!}
+                
+                <!--<nav aria-label="Page navigation example">
+                <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="/subestaciones?page=1">1</a></li>
+                <li class="page-item"><a class="page-link" href="/subestaciones?page=2">2</a></li>
+                <li class="page-item"><a class="page-link" href="/subestaciones?page=3">3</a></li>
+                <li class="page-item"><a class="page-link" href="/subestaciones?page=4">4</a></li>
+                <li class="page-item"><a class="page-link" href="/subestaciones?page=5">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+                </nav>-->
             </div>
         </div>
     </div>
+    @section('js')
+    <script src= https://code.jquery.com/jquery-3.5.1.js></script>
+    <script src= https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js></script>
+    <script src= https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js></script>
+    <script>
+       $(document).ready(function () {
+   $('#gerencias').DataTable({
+       "lengthMenu": [[10, 50, -1], [10,50, "All"]]
+   });
+       } );
+
+    </script>
+   
+    @endsection
+
 @endsection

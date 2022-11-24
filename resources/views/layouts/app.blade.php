@@ -18,6 +18,16 @@
 
     <!--<h1 class="bg-primary text-white text-center"> CATALOGO DE SUBESTACIONES GERENCIA </h1> PLANTILLA INICIAL ZONA GRO-MOR-->
      
+    <!-- Bootstrap CSS -->
+    @yield('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-OXTEbYDqaX2ZY/BOaZV/yFGChYHtrXH2nyXJ372n2Y8abBhrqacCEe+3qhSHtLjy" crossorigin="anonymous">
+
+    <title>PCAM2.0</title>
+  </head>
+  <body>
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    @yield('js')
     
     <!-- Scripts -->
     @vite(['resources/js/app.js'])

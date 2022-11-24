@@ -99,11 +99,11 @@
 
                                             <td>
                                                 <form action="{{route('zonas.destroy',$zona->id) }}" method="POST">
-                                                    <center><a class="btn btn-sm btn-primary " href="{{ route('zonas.show',$zona->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('zonas.edit',$zona->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <!--<center><a class="btn btn-sm btn-primary " href="{ { route('zonas.show',$zona->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>-->
+                                                    <center><a class="btn btn-sm btn-success" href="{{ route('zonas.edit',$zona->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button></center>
+                                                   <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button></center>
                                                 </form>
                                             </td>
                                         </tr>

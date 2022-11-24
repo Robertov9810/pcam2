@@ -101,7 +101,6 @@
                               </div>
                               
                             <!-- Modal editar-->
-
                             @foreach($puntos as $punto)
                             <div class="modal fade" id="edit{{$punto->id}}" tabindex="-1" aria-labelledby="myModallabel" aria-hidden="true">
                                 <div class="modal-dialog">

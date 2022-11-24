@@ -23,6 +23,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ZonaSeeder::class);//Llamando al seeder de Zona
 
+        $this->call(EstadoPuntoSedder::class);//Llammada al seeder de estado punto
+
+        $this->call(TipoPuntoSeeder::class);//Llammada al seeder de Tipo de punto
+
+        $this->call(SubestacionSeeder::class);//Llammada al seeder SubestacionSeeder
+
 
         //\App\Models\User::factory(5)->create();
         //\App\Models\Gerencia::factory(20)->create();
